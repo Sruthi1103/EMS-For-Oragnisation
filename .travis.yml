@@ -5,4 +5,17 @@ services:
 before_install:
   - docker build -t emswebapp -f Dockerfile .
 script:
-  - docker run -e CI=true -p 3000:3000 -p 8080:80 emswebapp
+  - docker run -e CI=true emswebapp
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-1"
+  app: "EMS-For-Organisation"
+  env: "Emsfororganisation-env"
+  bucket_name: "elasticbeanstalk-us-west-1-122570643846"
+  bucket_path: "EMS-For-Organisation"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"

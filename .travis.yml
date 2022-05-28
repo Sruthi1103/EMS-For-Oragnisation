@@ -4,6 +4,7 @@ services:
 
 before_install:
   - docker build -t emswebapp -f Dockerfile .
+
 script:
   - docker run -d emswebapp
 deploy:

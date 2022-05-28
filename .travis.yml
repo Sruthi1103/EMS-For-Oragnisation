@@ -9,10 +9,10 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  region: "us-west-1"
+  region: "us-east-1"
   app: "EMS-For-Organisation"
   env: "Emsfororganisation-env"
-  bucket_name: "elasticbeanstalk-us-west-1-122570643846"
+  bucket_name: "elasticbeanstalk-us-east-1-122570643846"
   bucket_path: "EMS-For-Organisation"
   on:
     branch: main

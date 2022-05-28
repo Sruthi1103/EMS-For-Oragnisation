@@ -5,4 +5,4 @@ services:
 before_install:
   - docker build -t emswebapp -f Dockerfile .
 script:
-  - docker run -e CI=true -p 3000:3000 emswebapp
+  - docker run -e CI=true -p 3000:3000 -p 8080:80 emswebapp

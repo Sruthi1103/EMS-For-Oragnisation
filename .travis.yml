@@ -4,7 +4,8 @@ services:
 
 before_install:
   - docker build -t emswebapp -f Dockerfile .
-
+script:
+  - docker run -d emswebapp
 deploy:
   provider: elasticbeanstalk
   region: "us-west-1"

@@ -4,8 +4,6 @@ services:
 
 before_install:
   - docker build -t emswebapp -f Dockerfile .
-script:
-  - docker run -e CI=true emswebapp
 
 deploy:
   provider: elasticbeanstalk

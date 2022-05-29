@@ -1,4 +1,4 @@
-FROM node:13 as builder
+FROM node:13
 
 WORKDIR '/app'
 
@@ -7,9 +7,5 @@ COPY package.json .
 RUN npm install
 
 COPY . .
-
-WORKDIR '/app/backend'
-
-RUN npm install
 
 CMD [ "npm","run","start" ]

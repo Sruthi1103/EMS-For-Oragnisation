@@ -2,9 +2,13 @@ sudo: required
 services:
   - docker
 
+before_install:
+  - docker-compose -t emswebapp up --build
+
 script:
-  - docker-compose up --build -d
-  - docker-compose stop
+  # - docker-compose up --build -d
+  # - docker-compose stop
+  - docker-compose -d emswebapp up
 
 deploy:
   provider: elasticbeanstalk

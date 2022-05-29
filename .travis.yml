@@ -3,7 +3,7 @@ services:
   - docker
 
 script:
-  - docker-compose -f docker-compose-dev.yml -e CI=true up --build
+  - docker-compose -f docker-compose-dev.yml up --build
 
 deploy:
   provider: elasticbeanstalk

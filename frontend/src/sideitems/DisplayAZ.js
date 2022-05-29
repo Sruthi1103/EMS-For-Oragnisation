@@ -19,7 +19,7 @@ const DisplayAZ = () => {
     getRequests();
   });
   return (
-    <Base title="Azure Pending Request">
+    <Base title="Azure VM Pending Requests">
       <div style={{ padding: "50px 100px 90px 390px" }} className=" row">
         <div className="row">
           {msg.values.map((val, index) => {

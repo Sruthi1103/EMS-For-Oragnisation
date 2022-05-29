@@ -136,7 +136,7 @@ const MailerList = () => {
               <thead>
                 <tr>
                   <td>Id</td>
-                  <td>Event Name</td>
+                  <td>EventName</td>
                   <td>Email ID</td>
                 </tr>
               </thead>

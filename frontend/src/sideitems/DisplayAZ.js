@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Base from "../Core/Base";
 import { Card, ListGroupItem, ListGroup } from "react-bootstrap";
 import axios from "axios";
+import { API } from "../backend";
 
 const DisplayAZ = () => {
   const [msg, setMsg] = useState({
@@ -9,7 +10,7 @@ const DisplayAZ = () => {
   });
 
   const getRequests = () => {
-    axios.get("http://localhost:8000/getRequests/").then((response) => {
+    axios.get(`${API}/getRequests/`).then((response) => {
       setMsg({ ...msg, values: response.data });
       console.log(response.data);
     });

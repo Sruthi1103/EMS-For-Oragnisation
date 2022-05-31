@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Base from "../Core/Base";
 import { upload } from "../Auth";
 import axios from "axios";
+import { API } from "../backend";
 // import Table from "../table/Table";
 import { Card, Button, Alert, Table } from "react-bootstrap";
 
@@ -76,18 +77,16 @@ const MailerList = () => {
   );
   const whileSubmit = async (e) => {
     e.preventDefault();
-    await axios
-      .post("http://localhost:8000/findEmail/", name)
-      .then((response) => {
-        setMsg(response.data.respMesg);
-        msg.forEach((val) => {
-          let tmp = {
-            eventname: name.eventName,
-            emailid: val,
-          };
-          topCustomers.body.push(tmp);
-        });
+    await axios.post(`${API}/findEmail/`, name).then((response) => {
+      setMsg(response.data.respMesg);
+      msg.forEach((val) => {
+        let tmp = {
+          eventname: name.eventName,
+          emailid: val,
+        };
+        topCustomers.body.push(tmp);
       });
+    });
   };
   const topCustomers = {
     head: ["Event Name", "Email ID"],

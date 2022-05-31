@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import Base from "../Core/Base";
 import Select from "react-select";
+import { API } from "../backend";
+
 const AzureCalc = () => {
   const [msg, setMsg] = useState("");
   const services = [
@@ -65,7 +67,7 @@ const AzureCalc = () => {
     e.preventDefault();
 
     await axios
-      .post("http://localhost:8000/find/", values)
+      .post(`${API}/find/`, values)
       .then((response) => setMsg(response.data.total));
   };
 

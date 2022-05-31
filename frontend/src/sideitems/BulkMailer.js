@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Base from "../Core/Base";
 import axios from "axios";
+import { API } from "../backend";
+
 const BulkMailer = () => {
   const [msg, setMsg] = useState("");
   const [values, setValues] = useState({
@@ -16,7 +18,7 @@ const BulkMailer = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     await axios
-      .post("http://localhost:8000/sendmail/", values)
+      .post(`${API}/sendmail/`, values)
       .then((response) => setMsg(response.data.respMesg));
   };
   return (

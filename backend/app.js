@@ -38,7 +38,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 //routes
 
-app.use("/", authRoutes);
+app.use("/api", authRoutes);
 
 //App port
 const port = process.env.PORT || 3000;

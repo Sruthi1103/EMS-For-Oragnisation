@@ -1,18 +1,13 @@
+language: generic
 sudo: required
 services:
   - docker
 
 script:
-  - docker build -t emsapp -f Dockerfile.dev .
-
-deploy:
-  provider: elasticbeanstalk
-  region: "us-east-1"
-  app: "EMS-For-Organisation"
-  env: "Emsfororganisation-env"
-  bucket_name: "elasticbeanstalk-us-east-1-122570643846"
-  bucket_path: "EMS-For-Organisation"
-  on:
-    branch: main
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+  - docker build -t ems/frontend -f ./frontend/Dockerfile.dev ./frontend
+  - docker build -t ems/backend -f ./backend/Dockerfile.dev ./backend
+  - docker build -t ems/nginx -f ./nginx/Dockerfile.dev ./nginx
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push ems/frontend
+  - docker push ems/backend
+  - docker push ems/nginx

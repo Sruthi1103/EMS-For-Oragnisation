@@ -4,8 +4,8 @@ services:
     image: "sruthidoc/frontend"
     mem_limit: 1024m
     hostname: frontend
-	environment:
-		- REACT_APP_BACKEND=$REACT_APP_BACKEND
+    environment:
+	- REACT_APP_BACKEND=$REACT_APP_BACKEND
 
   backend:
     image: "sruthidoc/backend"

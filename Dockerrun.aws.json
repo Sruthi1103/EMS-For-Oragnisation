@@ -5,13 +5,15 @@
       "name": "backend",
       "image": "sruthidoc/backend",
       "hostname": "backend",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "frontend",
       "image": "sruthidoc/frontend",
       "hostname": "frontend",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "nginx",
@@ -23,7 +25,8 @@
           "containerPort": 80
         }
       ],
-      "links": ["frontend", "backend"]
+      "links": ["frontend", "backend"],
+      "memory": 128
     }
   ]
 }

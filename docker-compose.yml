@@ -2,7 +2,7 @@ version: "3"
 services:
   backend:
     image: "sruthidoc/backend"
-    mem_limit: 128m
+    mem_limit: 256m
     hostname: backend
     ports:
       - "8000:8000"

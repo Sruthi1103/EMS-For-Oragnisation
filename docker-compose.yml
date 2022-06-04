@@ -4,14 +4,12 @@ services:
     image: "sruthidoc/frontend"
     mem_limit: 1024m
     hostname: frontend
-    ports:
-      - "3000:3000"
+
   backend:
     image: "sruthidoc/backend"
     mem_limit: 256m
     hostname: backend
-    ports:
-      - "8000:8000"
+
   nginx:
     image: "sruthidoc/nginx"
     mem_limit: 1024m

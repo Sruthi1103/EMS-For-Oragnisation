@@ -5,13 +5,13 @@ services:
     mem_limit: 1024m
     hostname: frontend
     environment:
-	- REACT_APP_BACKEND=$REACT_APP_BACKEND
+      - REACT_APP_BACKEND=$REACT_APP_BACKEND
 
   backend:
     image: "sruthidoc/backend"
     mem_limit: 256m
     hostname: backend
-	environment:
+    environment:
       - DATABASE=$DATABASE_CONNECTION_STRING
       - PORT=$PORT
       - SECRET=$ENCRYPTION_SECRET

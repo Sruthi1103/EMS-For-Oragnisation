@@ -10,7 +10,7 @@ const DisplayAZ = () => {
   });
 
   const getRequests = () => {
-    axios.get(`${API}/getRequests/`).then((response) => {
+    axios.get(`${process.env.REACT_APP_BACKEND}/getRequests/`).then((response) => {
       setMsg({ ...msg, values: response.data });
       console.log(response.data);
     });

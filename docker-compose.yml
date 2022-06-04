@@ -9,7 +9,12 @@ services:
     image: "sruthidoc/backend"
     mem_limit: 256m
     hostname: backend
-    
+	environment:
+      - DATABASE=$DATABASE_CONNECTION_STRING
+      - PORT=$PORT
+      - SECRET=$ENCRYPTION_SECRET
+      - CSV_UPLOAD_PATH=$CSV_UPLOAD_PATH
+      
   nginx:
     image: "sruthidoc/nginx"
     mem_limit: 256m

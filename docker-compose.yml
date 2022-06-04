@@ -9,7 +9,7 @@ services:
     image: "sruthidoc/backend"
     mem_limit: 256m
     hostname: backend
-	environment:
+    environment:
       - DATABASE=$DATABASE_CONNECTION_STRING
       - PORT=$PORT
       - SECRET=$ENCRYPTION_SECRET

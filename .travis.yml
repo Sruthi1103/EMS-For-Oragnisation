@@ -15,10 +15,10 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
-  app: "EMS-For-Organisation"
-  env: "Emsfororganisation-env-1"
+  app: "EMS-Webapp"
+  env: "Emswebapp-env"
   bucket_name: "elasticbeanstalk-us-east-1-122570643846"
-  bucket_path: "ems"
+  bucket_path: "emswebapp"
   on:
     branch: main
   access_key_id: $AWS_ACCESS_KEY

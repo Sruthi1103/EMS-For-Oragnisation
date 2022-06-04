@@ -4,9 +4,9 @@ services:
   - docker
 
 script:
-  - docker build -t sruthidoc/frontend -f ./frontend/Dockerfile.dev ./frontend
-  - docker build -t sruthidoc/backend -f ./backend/Dockerfile.dev ./backend
-  - docker build -t sruthidoc/nginx -f ./nginx/Dockerfile.dev ./nginx
+  - docker build -t sruthidoc/frontend ./frontend
+  - docker build -t sruthidoc/backend ./backend
+  - docker build -t sruthidoc/nginx ./nginx
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push sruthidoc/frontend
   - docker push sruthidoc/backend

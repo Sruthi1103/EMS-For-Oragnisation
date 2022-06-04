@@ -1,0 +1,29 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "backend",
+      "image": "sruthidoc/backend",
+      "hostname": "backend",
+      "essential": false
+    },
+    {
+      "name": "frontend",
+      "image": "sruthidoc/frontend",
+      "hostname": "frontend",
+      "essential": false
+    },
+    {
+      "name": "nginx",
+      "image": "sruthidoc/nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["frontend", "backend"]
+    }
+  ]
+}

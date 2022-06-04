@@ -16,7 +16,7 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
   app: "EMS-For-Organisation"
-  env: "Emsfororganisation-env"
+  env: "Emsfororganisation-env-1"
   bucket_name: "elasticbeanstalk-us-east-1-122570643846"
   bucket_path: "ems"
   on:

@@ -1,15 +1,17 @@
 version: "3"
 services:
+  frontend:
+    image: "sruthidoc/frontend"
+    mem_limit: 1024m
+    hostname: frontend
+    ports:
+      - "3000:3000"
   backend:
     image: "sruthidoc/backend"
     mem_limit: 256m
     hostname: backend
     ports:
       - "8000:8000"
-  frontend:
-    image: "sruthidoc/frontend"
-    mem_limit: 1024m
-    hostname: frontend
   nginx:
     image: "sruthidoc/nginx"
     mem_limit: 1024m

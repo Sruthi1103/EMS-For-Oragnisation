@@ -6,7 +6,7 @@ services:
       context: ./nginx
       dockerfile: Dockerfile.dev
     ports:
-      - "5000:80"
+      - "80:80"
   backend:
     build:
       context: ./backend

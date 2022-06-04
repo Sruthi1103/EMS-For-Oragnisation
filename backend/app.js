@@ -43,6 +43,15 @@ app.use("/api", authRoutes);
 //App port
 const port = process.env.PORT || 5000;
 
+app.use(function (request, response, next) {
+  response.header("Access-Control-Allow-Origin", "*");
+  response.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 //Starting server
 app.listen(port, () => {
   console.log(`Web app is always running at ${port}`);

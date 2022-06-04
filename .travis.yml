@@ -11,3 +11,15 @@ script:
   - docker push sruthidoc/frontend
   - docker push sruthidoc/backend
   - docker push sruthidoc/nginx
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "EMS-For-Organisation"
+  env: "Emsfororganisation-env"
+  bucket_name: "elasticbeanstalk-us-east-1-122570643846"
+  bucket_path: "ems"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY

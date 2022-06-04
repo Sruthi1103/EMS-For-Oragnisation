@@ -9,7 +9,7 @@ services:
     mem_limit: 128m
     hostname: frontend
   nginx:
-    restart: always
+    image: "sruthidoc/nginx"
     mem_limit: 128m
     hostname: nginx
     ports:

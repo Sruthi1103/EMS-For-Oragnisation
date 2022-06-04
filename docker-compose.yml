@@ -9,6 +9,8 @@ services:
     image: "sruthidoc/backend"
     mem_limit: 256m
     hostname: backend
+    ports:
+      - "5000:5000"
 
   nginx:
     image: "sruthidoc/nginx"

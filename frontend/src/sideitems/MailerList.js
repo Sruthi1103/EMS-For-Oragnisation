@@ -77,7 +77,7 @@ const MailerList = () => {
   );
   const whileSubmit = async (e) => {
     e.preventDefault();
-    await axios.post(`${API}/findEmail/`, name).then((response) => {
+    await axios.post("/api/findEmail/", name).then((response) => {
       setMsg(response.data.respMesg);
       msg.forEach((val) => {
         let tmp = {

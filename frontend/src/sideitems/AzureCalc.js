@@ -67,7 +67,7 @@ const AzureCalc = () => {
     e.preventDefault();
 
     await axios
-      .post(`${API}/find/`, values)
+      .post("/api/find/", values)
       .then((response) => setMsg(response.data.total));
   };
 

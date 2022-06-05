@@ -18,7 +18,7 @@ const BulkMailer = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     await axios
-      .post(`${API}/sendmail/`, values)
+      .post("/api/sendmail/", values)
       .then((response) => setMsg(response.data.respMesg));
   };
   return (

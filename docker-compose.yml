@@ -3,14 +3,14 @@ version: "3"
 services:
   frontend:
     image: "sruthidoc/frontend"
-#    mem_limit: 1024m
+    mem_limit: 1024m
     hostname: frontend
     environment:
       - REACT_APP_BACKEND=$REACT_APP_BACKEND
 
   backend:
     image: "sruthidoc/backend"
-#    mem_limit: 256m
+    mem_limit: 256m
     hostname: backend
     environment:
       - DATABASE=$DATABASE_CONNECTION_STRING
@@ -20,7 +20,7 @@ services:
       
   nginx:
     image: "sruthidoc/nginx"
-#    mem_limit: 256m
+    mem_limit: 256m
     hostname: nginx
     ports:
       - "80:80"

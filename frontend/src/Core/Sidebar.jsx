@@ -49,7 +49,7 @@ const Sidebar = () => {
         <div style={{ color: "#000000" }} className="sidebar__item ">
           <div className="sidebar__item-inner">
             <i class="bx bxs-calculator" style={{ fontSize: "1.5rem" }}></i>
-            <span>AzureRequests</span>
+            <span>VM Requests</span>
           </div>
         </div>
       </Link>

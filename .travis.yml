@@ -2,7 +2,6 @@ language: generic
 sudo: required
 services:
   - docker
-
 script:
   - docker build -t sruthidoc/frontend ./frontend
   - docker build -t sruthidoc/backend ./backend

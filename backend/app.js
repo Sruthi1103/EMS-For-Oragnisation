@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/", authRoutes);
 
 //App port
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 
 app.use(function (request, response, next) {
   response.header("Access-Control-Allow-Origin", "*");

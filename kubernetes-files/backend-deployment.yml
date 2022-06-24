@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: server
+  template:
+    metadata:
+      labels:
+        component: server
+    spec:
+      containers:
+        - name: backend
+          image: sruthidoc/backend
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DATABASE
+              value: 'mongodb+srv://Sruthi:Ss20001103!@cluster0.2nyzq.mongodb.net/ems'
+            - name: PORT
+              value: '5000'
+            - name: SECRET
+              value: 'eventmanagement
+            - name: CSV_UPLOAD_PATH
+              value: '/data/csv/upload.csv'
+           

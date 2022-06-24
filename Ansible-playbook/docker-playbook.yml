@@ -1,0 +1,28 @@
+---
+- hosts: ansible
+  tasks:
+  - name: building docker image backend
+    command: docker build -t sruthidoc/backend .
+    args:
+      chdir: /home/ansadmin/backend
+  - name: building docker image frontend
+    command: docker build -t sruthidoc/frontend .
+    args:
+      chdir: /home/ansadmin/frontend
+  - name: building docker image frontend
+    command: docker build -t sruthidoc/nginx .
+    args:
+      chdir: /home/ansadmin/nginx
+
+  - name: logging in to docker hub
+    command: echo "Ss2000143@" | docker login -u "sruthidoc" --password-stdin
+  - name: building docker imae nginx
+    command: docker build -t sruthidoc/nginx .
+    args:
+      chdir: /home/ansadmin/nginx
+  - name: pushing backend image to docker hub
+    command:  docker push sruthidoc/backend
+  - name: pushing frontend image to docker hub
+    command: docker push sruthidoc/frontend
+  - name: pushing nginx to docker hub
+    command: docker push sruthidoc/nginx

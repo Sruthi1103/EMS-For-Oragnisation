@@ -1,0 +1,15 @@
+---
+- hosts: ansible
+  user: root
+  tasks:
+  - name: rebuilding backend deployment
+    command: kubectl apply -f backend-deployment.yml
+  - name: rebuilding frontend deployment
+    command: kubectl apply -f frontend-deployment.yml
+  - name: rebuilding backend service
+    command: kubectl apply -f backend-cluster-ip.yml
+  - name: rebuilding frontend service
+    command: kubectl apply -f frontend-cluster-ip.yml
+  - name: rebuilding ingress nginx service
+    command: kubectl apply -f ingress-service.yml
+    

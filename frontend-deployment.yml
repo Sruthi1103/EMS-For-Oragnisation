@@ -1,0 +1,26 @@
+--- 
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: frontend-deployment
+spec: 
+  replicas: 3
+  selector: 
+    matchLabels: 
+      component: web
+  template: 
+    metadata: 
+      labels: 
+        component: web
+    spec: 
+      containers: 
+        - 
+          env: 
+            - 
+              name: REACT_APP_BACKEND
+              value: "http://localhost:5000/api"
+          image: stephengrider/multi-client
+          name: client
+          ports: 
+            - 
+              containerPort: 3000

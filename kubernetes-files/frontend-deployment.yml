@@ -19,7 +19,7 @@ spec:
             - 
               name: REACT_APP_BACKEND
               value: "http://localhost:5000/api"
-          image: stephengrider/multi-client
+          image: sruthidoc/frontend
           name: client
           ports: 
             - 

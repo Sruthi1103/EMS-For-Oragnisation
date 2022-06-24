@@ -23,7 +23,7 @@ spec:
             - name: PORT
               value: '5000'
             - name: SECRET
-              value: 'eventmanagement
+              value: 'eventmanagement'
             - name: CSV_UPLOAD_PATH
               value: '/data/csv/upload.csv'
            
